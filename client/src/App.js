@@ -9,6 +9,7 @@ import Login from './components/login'
 import Gyms from './components/gyms';
 import UserPage from './components/UserPage';
 import GymCards from './components/Gymcards';
+import GymInfo from './components/GymInfo'
  
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
   return (
   <div>
  <Navbar updateUser={updateUser}/>
+ { !currentUser? <Login error={'please login'} updateUser={updateUser} /> :
  <Switch>
   <Route exact path="/signup">
  <Signup updateUser={updateUser}/>
@@ -56,8 +58,11 @@ function App() {
  <Route exact path='/users/:id'>
         <UserPage  />
       </Route>
+      <Route exact path="/:id">
+          <GymInfo/>
+        </Route>
  </Switch>
-
+}
  </div>
   );
 }

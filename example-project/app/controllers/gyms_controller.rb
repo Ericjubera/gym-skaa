@@ -4,7 +4,7 @@ class GymsController < ApplicationController
      end 
      def show
          gyms=Gym.find(params[:id])
-         render json:gyms
+         render json:gyms, serializer:GymReviewsSerializer
      end
      def create
          gyms=Gym.create!(gym_params)

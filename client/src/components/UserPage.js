@@ -47,25 +47,11 @@ function UserPage(){
     if(loading) return <h1>Loading</h1>
     if(errors) return <h1>{errors}</h1>
     return (
-        <card>
+    <div>
             <h1>{user.name}'s</h1>
-            <h3>Collection</h3>
-{/*             
-            {user.pipes.map(pipes => (
-               
-                <li>
-                    <h2>{pipes.item_name}</h2>
-                    <p>color {pipes.color}</p>
-                    <img src={pipes.image}/>
-                </li>
-                ))} */}
-             
-                {/* <PipeCards></PipeCards> */}
-               
-           {/* <img src={user.pipes[1].image}/> */}
-           {/* <img src={user.pipes[0].image}/> */}
-           </card>
-        
+            <h3>gym reviews</h3>
+
+           </div>
     )
 }
 

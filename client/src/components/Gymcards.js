@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import Gyms from "./gyms";
+import NewGym from "./NewGym"
 function GymCards(){
     const [gyms,setGyms]=useState([])
 
@@ -23,7 +24,9 @@ function GymCards(){
 
 
     return(
+      
         <div>uska
+            <NewGym/>
             {cards}
         </div>
     )
