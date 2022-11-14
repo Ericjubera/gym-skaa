@@ -4,16 +4,15 @@ import { useHistory } from "react-router-dom";
 
 function Gyms({gyms,onDelete}){
   const history = useHistory();
-    const {id,name,location,size,image} = gyms
+    const {id,name,location,size,image,open,closed} = gyms
     function handleDelete(){
         fetch(`/gyms/${id}`,{
           method:'DELETE'
         }).then(res=>res.json())
         .then(()=>onDelete(id))
-      }
-      function handleMoreInfoClick() {
-        //ADD THE POP UP HERE!!!
        
+      }
+      function handleMoreInfoClick() {   
         history.push(`/${gyms.id}`);
       }
     return(
@@ -28,8 +27,9 @@ function Gyms({gyms,onDelete}){
        
        
         <div className="card-body">
-        <p  >location<span>{location}</span></p>
-        <p  >size<span>{size}</span> </p>
+        <p>location:{location}</p>
+        <p>size:{size} </p>
+        <p>open:{open} closed:{closed}</p>
         </div>
         <div className="btn">
         <button onClick={()=>handleDelete(id)}><a>DELETE</a></button>

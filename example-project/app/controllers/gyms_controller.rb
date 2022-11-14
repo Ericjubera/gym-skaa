@@ -17,6 +17,6 @@ class GymsController < ApplicationController
  
      private
      def gym_params
-         params.permit(:name,:location,:image,:size)
+         params.permit(:name,:location,:image,:size,:open,:closed)
      end
 end

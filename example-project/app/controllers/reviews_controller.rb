@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     render json:rev
      end
     def create
-        rev=Review.create!(rev_params)
+        rev=Review.create(rev_params)
         render json:rev
     end
     # def update 

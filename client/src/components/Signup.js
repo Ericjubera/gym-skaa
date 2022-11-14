@@ -34,7 +34,7 @@ function onSubmit(e){
     .then(res => {
         if(res.ok){
             res.json().then(user => {
-                histroy.push(`/users/${user.id}`)
+                histroy.push(`/login`)
             })
         }else {
             res.json().then(json => setErrors(Object.entries(json.errors)))

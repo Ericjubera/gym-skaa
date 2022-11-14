@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 
 
+
 function UserPage(){
     const [user, setUser] = useState()
     const [loading, setLoading] = useState(true)
@@ -50,6 +51,7 @@ function UserPage(){
     <div>
             <h1>{user.name}'s</h1>
             <h3>gym reviews</h3>
+           
 
            </div>
     )

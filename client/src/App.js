@@ -10,10 +10,20 @@ import Gyms from './components/gyms';
 import UserPage from './components/UserPage';
 import GymCards from './components/Gymcards';
 import GymInfo from './components/GymInfo'
+import NewReview from './components/newReviews';
+
  
 
 function App() {
   const [currentUser,setCurrentUser]=useState(false)
+  
+ 
+
+
+ 
+
+
+
 
   // const [count, setCount] = useState(0);
 
@@ -52,15 +62,18 @@ function App() {
  <Login updateUser={updateUser}/>
  </Route>
  <Route exact path="/gyms">
- {/* <Gyms updateUser={updateUser}/> */}
- <GymCards updateUser={updateUser}/>
+ <GymCards updateUser={updateUser} />
  </Route>
  <Route exact path='/users/:id'>
         <UserPage  />
       </Route>
       <Route exact path="/:id">
-          <GymInfo/>
+          <GymInfo />
         </Route>
+        <Route exact path="/:id/:id">
+          <NewReview  updateUser={updateUser}/>
+        </Route>
+    
  </Switch>
 }
  </div>

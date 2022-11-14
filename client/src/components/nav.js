@@ -23,6 +23,7 @@ function NavBar({updateUser}) {
                 <NavLink className="link" to="/login">login</NavLink>
                 <NavLink className="link" to="/gyms">gyms</NavLink>
                 <NavLink className="link" to='/users/:id'>home</NavLink>
+                {/* <NavLink className="link" to='/newReview'>review</NavLink> */}
             </div>
         </div>
       )}
