@@ -20,7 +20,7 @@ function Gyms({gyms,onDelete}){
         
          <div key={gyms.id}  className="card">
            <div className="image-container">
-        <img src={image} />
+        <img alt="sum" src={image} />
         </div>
           <div className="card-content">
         <div className="card-title"><h1>{name} </h1></div>

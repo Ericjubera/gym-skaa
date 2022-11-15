@@ -41,7 +41,6 @@ function UserPage(){
                 res.json().then(data => setErrors(data.error))
             }
         })
-       
     },[])
     
 

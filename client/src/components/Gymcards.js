@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import Gyms from "./gyms";
 import NewGym from "./NewGym"
-function GymCards({}){
+function GymCards(){
 
     function onDelete(id){
         let newCard=gyms.filter((neww)=>neww.id !== id)
@@ -23,9 +23,9 @@ function GymCards({}){
 
 
 
-    function onDelete(id){
-        let newCard=gyms.filter((neww)=>neww.id !== id)
-        gyms(newCard)}
+    // function onDelete(id){
+    //     let newCard=gyms.filter((neww)=>neww.id !== id)
+    //     gyms(newCard)}
 
         
   

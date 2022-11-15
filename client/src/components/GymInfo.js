@@ -1,7 +1,6 @@
 import {useState, useEffect} from "react"
-import {NavLink, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import NewReview from "./newReviews"
-import { useHistory } from "react-router-dom";
 import './Gyminfo.css'
 function GymInfo(){
     const [gym,setGyms]=useState([])
@@ -10,7 +9,6 @@ function GymInfo(){
     const params = useParams()
     const [user,setUser]=useState([])
     const {id} = params
-    const history = useHistory();  
 
 
     // function handleMoreInfoClick() { 
@@ -58,7 +56,7 @@ function GymInfo(){
         
         <div className="">
             <h1 className="title">{gym.name}</h1>
-            <img className="img" src={gym.image}></img>
+            <img alt="sum" className="img" src={gym.image}></img>
             <p className="location">Location: {gym.location}</p>
             <p className="size"> size: {gym.size}</p>
             <p className="time"> opens {gym.open} - closed {gym.closed}</p>

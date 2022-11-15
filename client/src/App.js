@@ -6,7 +6,6 @@ import Navbar from './components/nav';
 import Signup from './components/Signup';
 import {Route,Switch} from "react-router-dom";
 import Login from './components/login'
-import Gyms from './components/gyms';
 import UserPage from './components/UserPage';
 import GymCards from './components/Gymcards';
 import GymInfo from './components/GymInfo'
