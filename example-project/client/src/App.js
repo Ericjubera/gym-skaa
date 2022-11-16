@@ -10,6 +10,7 @@ import UserPage from './components/UserPage';
 import GymCards from './components/Gymcards';
 import GymInfo from './components/GymInfo'
 import NewReview from './components/newReviews';
+import EditReview from './components/EditReview';
 
  
 
@@ -52,7 +53,7 @@ function App() {
   return (
   <div>
  <Navbar updateUser={updateUser}/>
- { !currentUser? <Login error={'please login'} updateUser={updateUser} /> :
+ {/* { !currentUser? <Login error={'please login'} updateUser={updateUser} /> : */}
  <Switch>
   <Route exact path="/signup">
  <Signup updateUser={updateUser}/>
@@ -63,6 +64,9 @@ function App() {
  <Route exact path="/gyms">
  <GymCards updateUser={updateUser} />
  </Route>
+ <Route exact path="/review/:id/edit">
+          <EditReview />
+        </Route>
  <Route exact path='/users/:id'>
         <UserPage  />
       </Route>
@@ -72,9 +76,10 @@ function App() {
         <Route exact path="/:id/:id">
           <NewReview  updateUser={updateUser}/>
         </Route>
+     
     
  </Switch>
-}
+{/* } */}
  </div>
   );
 }

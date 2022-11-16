@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     end 
     def show 
         # users=User.find(params[:id])
-        render json:current_user
+        render json:current_user 
     end 
     def create
     user=User.create!(user_params)

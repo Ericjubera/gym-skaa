@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import "./review.css"
 export default function Reviews({reviews,onDelete,setGym}){
     const {id,stars,review} = reviews
@@ -34,5 +35,7 @@ return(
 
      {/* <button onClick={()=>handleDelete(id)}>remove</button>  */}
      <button className="button" onClick={()=>(funremove(id))}>remove</button>
+     <button><NavLink to={`/review/${id}/edit`}>edit review</NavLink></button>
+     
 </div>
 )}
