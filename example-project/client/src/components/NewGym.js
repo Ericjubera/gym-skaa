@@ -34,7 +34,7 @@ function handleSubmit(e){
         <form onSubmit={handleSubmit}>
             
             <div className = "field1">
-            <label>gym info</label>
+            <label className="gyminfo">gym info</label>
             <input placeholder="Name" value={formData.name} name='name' onChange={handleFormChange} id="name"/> 
             <input type="text" name="image" value={formData.image} id="image" onChange={handleFormChange} placeholder="image" />       
             <input type="text" name="size" value={formData.size} onChange={handleFormChange} id="size" placeholder="size"></input>
