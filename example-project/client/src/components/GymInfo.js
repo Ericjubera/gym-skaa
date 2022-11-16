@@ -2,31 +2,33 @@ import {useState, useEffect} from "react"
 import {useParams} from 'react-router-dom'
 import NewReview from "./newReviews"
 import './Gyminfo.css'
+import Reviews from "./reviews"
 function GymInfo(){
-    const [gym,setGyms]=useState([])
+    const [gym,setGym]=useState([])
     const [loading, setLoading] = useState(true)
     const [errors, setErrors] = useState(false)
     const params = useParams()
     const [user,setUser]=useState([])
+    const [rev,revUser]=useState([])
     const {id} = params
-
-
-    // function handleMoreInfoClick() { 
+    //   useEffect((id) => { 
+    //     fetch(`/reviews/${id}`)
+    //     .then(r => r.json())
+    //       .then(revUser)
+    //       console.log(revUser)
+          
+    //   }, [])
+    function onDelete(id){
+        let newCard=gym.reviews.filter((neww)=>neww.id !== id)
+        setGym(newCard)
+      }
        
-    //     history.push(`/${gym.id}/${user.id}`);
-    //   }
-
-    function addnew(newRev){
-        setGyms([...gym,newRev]);
-    }
-
-         
     useEffect(() => { 
         fetch(`/users/${id}`)
         .then(r => r.json())
           .then(setUser)
           
-      }, [])
+      }, [id])
       
     
 
@@ -37,8 +39,7 @@ function GymInfo(){
                 res.json()
                
                 .then(gym => {
-                   setGyms(gym)
-                   console.log(gym)
+                   setGym(gym)
                    
                 //  console.log(gym.reviews)
                  setLoading(false)
@@ -49,9 +50,26 @@ function GymInfo(){
         })
       
        
-    },[])
+    },[id])
+    function addnew(newRev){
+        // console.log(gym.reviews,':::::',newRev)
+         setGym([...gym, newRev]);
+     
+     }
+   
+     
+  
     if(loading) return <h1>Loading</h1>
     if(errors) return <h1>{errors}</h1>
+
+    // {gym.reviews.map((review)=> (
+    //     <div  className="rev"  key={review.id}  >{review.review} - {review.stars} stars
+      
+    //     <button onSubmit={()=>onDelete(review.id)}>x</button> 
+    //     {/* {console.log(review.id)} */}
+    //     </div>
+    // ))}
+    
     return(
         
         <div className="">
@@ -60,16 +78,15 @@ function GymInfo(){
             <p className="location">Location: {gym.location}</p>
             <p className="size"> size: {gym.size}</p>
             <p className="time"> opens {gym.open} - closed {gym.closed}</p>
- <h2 className="title2">Reviews</h2> 
-            {gym.reviews.map((review)=> (
-               
+ <NewReview className="newrev" user={user} gym={gym} addnew={addnew} />
+ <h2 className="title2">All Reviews</h2> 
+ {gym.reviews.map((reviews)=> (
+              
+                <Reviews className="revski" setGym={setGym} key={reviews.id} reviews={reviews} onDelete={onDelete}/>
+                ))}
     
-                   <div className="rev" key={review.id} >{review.review} - {review.stars} stars</div>
             
-               
-               ))}
-               <NewReview className="newrev" user={user} gym={gym} addnew={addnew}  />
-               {/* <button onClick={handleMoreInfoClick }>review</button> */}
+              
         </div>
 
     )

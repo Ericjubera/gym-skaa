@@ -1,4 +1,5 @@
 import "./gyms.css"
+
 import { useHistory } from "react-router-dom";
 
 
@@ -15,6 +16,7 @@ function Gyms({gyms,onDelete}){
       function handleMoreInfoClick() {   
         history.push(`/${gyms.id}`);
       }
+      
     return(
 
         
@@ -32,8 +34,13 @@ function Gyms({gyms,onDelete}){
         <p>open:{open} closed:{closed}</p>
         </div>
         <div className="btn">
-        <button onClick={()=>handleDelete(id)}><a>DELETE</a></button>
-        <button onClick={handleMoreInfoClick}>More Info</button>
+        
+        <button  onClick={()=>handleDelete(id)}><a>remove</a></button>
+        
+       
+        </div>
+        <div className="btn">
+        <button  onClick={handleMoreInfoClick}><a>See more</a></button>
         </div>
         </div>
         </div>

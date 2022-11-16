@@ -39,7 +39,9 @@ function handleSubmit(e){
             <input type="text" name="image" value={formData.image} id="image" onChange={handleFormChange} placeholder="image" />       
             <input type="text" name="size" value={formData.size} onChange={handleFormChange} id="size" placeholder="size"></input>
             <input type="text" name="location" value={formData.location} onChange={handleFormChange} id="location" placeholder="location" ></input>
-            <select className="select" name="open" value={formData.open} onChange={handleFormChange} placeholder="open time ">
+            <div className="location"> opening time-
+            <select  name="open" value={formData.open} onChange={handleFormChange} placeholder="open time ">
+        
                     <option>1am</option>
                      <option>2am</option>
                      <option>3am</option>
@@ -53,6 +55,8 @@ function handleSubmit(e){
                      <option>11am</option>
                      <option>12am</option>
                  </select>
+
+                 closing time-
                  <select className="select" name="closed" value={formData.closed} onChange={handleFormChange} placeholder="closed time">
                  <option>1pm</option>
                      <option>2pm</option>
@@ -67,7 +71,7 @@ function handleSubmit(e){
                      <option>11pm</option>
                      <option>12pm</option>
                  </select>
-           
+                 </div>
             {/* <textarea type="text" name="location" value={formData.location} onChange={handleFormChange} id="location" placeholder="location"/> */}
             </div>
 

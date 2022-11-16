@@ -1,6 +1,8 @@
 import { useState,useEffect } from "react";
 import Gyms from "./gyms";
 import NewGym from "./NewGym"
+import { Card } from "semantic-ui-react";
+
 function GymCards(){
 
     function onDelete(id){
@@ -38,11 +40,11 @@ function GymCards(){
 
 
     return(
-      
-        <div>
-            gyms near you
+      <Card.Group itemsPerRow={2}>
+        {/* <div className="ska"> */}
             {cards}
             <NewGym onDelete={onDelete} addnew={addnew} gyms={""}/>
-        </div>
+        {/* </div> */}
+        </Card.Group>
     )
 }export default GymCards

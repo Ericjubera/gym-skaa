@@ -1,4 +1,40 @@
-.title{
-    font-size: 20px;
-    font-weight: 200;
+.titles{
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 600px;
+}
+.button2{
+    background-color: blue; /* Green */
+    border-radius:12px ;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 620px;
+}
+.revski{
+    /* margin-left: 300px; */
+}
+.input{
+    width: 100%;
+    padding: 15px 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    border: 2px solid blue;
+  
+    
+
+  
+}
+.rating{
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid blue;
+    border-radius: 4px;
+    /* background-color: #f1f1f1; */
+  
+
 }
